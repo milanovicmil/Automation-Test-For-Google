@@ -7,29 +7,24 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class InitWebDriver {
     
-    WebDriver webDriver;
+    private static WebDriver webDriver;
     
-    public InitWebDriver(){
-    }
-    
-    public WebDriver initializeWebDriver(){
+    public void initializeAndStartWebDriver(String URL){
         System.setProperty("webdriver.gecko.driver",
             "C:\\Users\\milica.milanovic\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setCapability("webdriver_accept_untrusted_certs", true);
         webDriver = new FirefoxDriver(firefoxOptions);
         webDriver.manage().window().maximize();
-        webDriver.get("https://www.google.rs");   
-       return webDriver;
+        webDriver.get(URL);   
   }
     
-    public void quitWebDriver(WebDriver webDriver){
+    public void quitWebDriver(){
         webDriver.quit();
     }
     
-    public static void main(String[] args) {
-        InitWebDriver init = new InitWebDriver();
-        WebDriver testDriver = init.initializeWebDriver();
-        init.quitWebDriver(testDriver);
+    public WebDriver getWebDriver(){
+        return webDriver;
     }
+    
 }
