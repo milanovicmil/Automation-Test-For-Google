@@ -11,7 +11,7 @@ import org.junit.Test;
  *
  * @author milica.milanovic
  */
-public class PracticeTest {
+public class UltimateqaTest {
 
     public WebController webController = new WebController();
     private static final InitWebDriver initWebDriver = new InitWebDriver();
@@ -22,33 +22,37 @@ public class PracticeTest {
         initWebDriver.initializeAndStartWebDriver("https://www.ultimateqa.com/simple-html-elements-for-automation/");
     }
 
-    //@Test
+    @Test
     public void testGetPageSource() {
         webController.getPageSource();
     }
 
-    //@Test
+    @Test
     public void findByClassNameAndClickOnBtn() {
         System.out.println("=================Run findAndClickOnBtn test====================");
         webController.findElementByClassName(BTN_CLASS_NAME).click();
+        webController.goBack();
         System.out.println("=================Finished findAndClickOnBtn test====================");
+
     }
 
-    //@Test 
+    @Test
     public void findByIdAndClickBtn() {
         System.out.println("=================Run findByNameAndClickBtn test====================");
         webController.findElementById("button1").click();
+        webController.acceptSystemAlert();
+        webController.goBack();
         System.out.println("=================Finished findByIdAndClickBtn test====================");
     }
 
-    //@Test 
+    @Test
     public void findByNameAndClickBtn() {
         System.out.println("=================Run findByNameAndClickBtn test====================");
         webController.findElementByName("button1");
         System.out.println("=================Finished findByNameAndClickBtn test====================");
     }
 
-    //@Test
+    @Test
     public void validateBtnText() {
         System.out.println("=================Run validateBtnText test====================");
         String buttonText = webController.findElementByClassName(BTN_CLASS_NAME).getText();
@@ -58,20 +62,18 @@ public class PracticeTest {
         Assert.assertTrue(button1Text.equals("Click Me!"));
         String button2Text = webController.findElementByName("button1").getText();
         Assert.assertTrue(button2Text.equals("Button"));
-      System.out.println("=================Finished validateBtnText test====================");
+        System.out.println("=================Finished validateBtnText test====================");
     }
-    
-    @Test 
-    public void validateLinkTextOnPage(){
+
+    @Test
+    public void validateLinkTextOnPage() {
         System.out.println("=================Run validateLinkTextOnPage test====================");
-        String textText1 = webController.findElementByClassName("et_pb_code_inner").getText();
-        System.out.println(textText1);
-        Assert.assertTrue(textText1.equals("Click me using this link text"));
-        String textText2 = webController.findElementByClassName("et_pb_module_header").getText();
-        System.out.println(textText2);
-        Assert.assertTrue(textText2.equals("Click button using ClassName"));
+        String Txt2 = webController.findElementByClassName("et_pb_module_header").getText();
+        Assert.assertTrue(Txt2.equals("Click button using ClassName"));
+        webController.findElementByLinkText("Click me using this link text!").click();
+        webController.goBack();
         System.out.println("=================Finished validateLinkTextOnPage test====================");
-        
+
     }
 
     @AfterClass
