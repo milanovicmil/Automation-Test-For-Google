@@ -35,7 +35,7 @@ public class CheckButtnonIsChacked {
         //nadji checkboc i klikni
         webController.findElementById("check1").click();
         //prodji kroz listu i svrstaj sve elemenete u listu
-        List<WebElement> lista = webController.findCheckBoxes("input[type='checkbox']");
+        List<WebElement> lista = webController.findCheckBoxes();
         for (int i = 1; i < lista.size(); i++) {
             //proveri da su svi checkbox cekovani
             Assert.assertTrue(webController.buttonIsSelected(lista.get(i)));

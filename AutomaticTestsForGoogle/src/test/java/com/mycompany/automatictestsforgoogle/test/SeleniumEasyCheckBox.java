@@ -34,9 +34,9 @@ public class SeleniumEasyCheckBox {
     //@Test
     public void CheckBoxDemo() {
         List<WebElement> lista = webController.findElements("checkbox");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getText().equals("Click on this check box")) {
-                lista.get(i).click();
+        for (WebElement lista1 : lista) {
+            if (lista1.getText().equals("Click on this check box")) {
+                lista1.click();
                 break;
             }
         }
@@ -46,9 +46,9 @@ public class SeleniumEasyCheckBox {
     // @Test
     public void CheckOption1() {
         List<WebElement> lista = webController.findElements("checkbox");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getText().equals("Option 1")) {
-                lista.get(i).click();
+        for (WebElement lista1 : lista) {
+            if (lista1.getText().equals("Option 1")) {
+                lista1.click();
                 break;
             }
         }
@@ -58,9 +58,9 @@ public class SeleniumEasyCheckBox {
     //@Test
     public void CheckOption2() {
         List<WebElement> lista = webController.findElements("checkbox");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getText().equals("Option 2")) {
-                lista.get(i).click();
+        for (WebElement lista1 : lista) {
+            if (lista1.getText().equals("Option 2")) {
+                lista1.click();
                 break;
             }
         }
@@ -69,9 +69,9 @@ public class SeleniumEasyCheckBox {
     //@Test
     public void CheckOption3() {
         List<WebElement> lista = webController.findElements("checkbox");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getText().equals("Option 3")) {
-                lista.get(i).click();
+        for (WebElement lista1 : lista) {
+            if (lista1.getText().equals("Option 3")) {
+                lista1.click();
                 break;
             }
         }
@@ -80,9 +80,9 @@ public class SeleniumEasyCheckBox {
     //@Test
     public void CheckOption4() {
         List<WebElement> lista = webController.findElements("checkbox");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getText().equals("Option 4")) {
-                lista.get(i).click();
+        for (WebElement lista1 : lista) {
+            if (lista1.getText().equals("Option 4")) {
+                lista1.click();
                 break;
             }
         }
@@ -91,9 +91,9 @@ public class SeleniumEasyCheckBox {
     //@Test 
     public void CheckOption5() {
         List<WebElement> lista = webController.findElements("checkbox");
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i).getText().equals("Check All")) {
-                lista.get(i).click();
+        for (WebElement lista1 : lista) {
+            if (lista1.getText().equals("Check All")) {
+                lista1.click();
             }
             break;
         }
@@ -108,23 +108,23 @@ public class SeleniumEasyCheckBox {
             
     @Test
     public void checkOption1() {
-        List<WebElement> list = webController.findCheckBoxes("input[type='checkbox']");
+        List<WebElement> list = webController.findCheckBoxes();
         list.get(1).click();
     }
     
     @Test
      public void checkOption2() {
-        List<WebElement> list = webController.findCheckBoxes("input[type='checkbox']");
+        List<WebElement> list = webController.findCheckBoxes();
         list.get(2).click();
     }
      @Test
       public void checkOption3() {
-        List<WebElement> list = webController.findCheckBoxes("input[type='checkbox']");
+        List<WebElement> list = webController.findCheckBoxes();
         list.get(3).click();
     }
       @Test 
        public void checkOption4() {
-        List<WebElement> list = webController.findCheckBoxes("input[type='checkbox']");
+        List<WebElement> list = webController.findCheckBoxes();
         list.get(4).click();
     }
 

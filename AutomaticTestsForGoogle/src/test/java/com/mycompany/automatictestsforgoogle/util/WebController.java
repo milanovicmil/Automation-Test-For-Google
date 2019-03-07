@@ -62,13 +62,25 @@ public class WebController {
                return webDriver.findElements(By.className(name));
            }
            
-    public List<WebElement> findCheckBoxes(String text){
+    public List<WebElement> findCheckBoxes(){
         return webDriver.findElements(By.cssSelector("input[type='checkbox']"));
            }
     
     public boolean buttonIsSelected(WebElement webElement){
         return webElement.isSelected();
     }
+    public List<WebElement> findRadioButton(){
+              return webDriver.findElements(By.cssSelector("input[type='radio']"));
+                      }
+    public List<WebElement> findByCssSelector(String text){
+             return webDriver.findElements(By.cssSelector(text));
     }
-     
-
+    public void selectFromDropDown(String tekst){
+             findElementById("select-demo").click();
+       }
+    public List<WebElement> findElementsBytagName(String name){
+        return webDriver.findElements(By.tagName(name));
+      
+    }
+  }
+  
