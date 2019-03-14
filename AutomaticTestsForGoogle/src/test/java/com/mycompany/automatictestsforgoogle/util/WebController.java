@@ -90,4 +90,8 @@ public class WebController {
         return findElementByXpath(xpath).isDisplayed();
     }
 
+    public List<WebElement> findElementsByClassName(String className) {
+        return webDriver.findElements(By.className(className));
+    }
+
 }

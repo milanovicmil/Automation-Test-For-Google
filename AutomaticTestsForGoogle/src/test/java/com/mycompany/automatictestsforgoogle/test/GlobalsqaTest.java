@@ -1,8 +1,5 @@
 
 package com.mycompany.automatictestsforgoogle.test;
-
-import static com.mycompany.automatictestsforgoogle.test.SeleniumEasyTest.INPUT_FIELD_A;
-import static com.mycompany.automatictestsforgoogle.test.SeleniumEasyTest.INPUT_FIELD_B;
 import com.mycompany.automatictestsforgoogle.util.InitWebDriver;
 import com.mycompany.automatictestsforgoogle.util.WebController;
 import org.junit.AfterClass;
