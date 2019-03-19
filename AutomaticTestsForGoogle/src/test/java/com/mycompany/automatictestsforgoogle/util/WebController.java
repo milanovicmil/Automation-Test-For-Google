@@ -94,4 +94,15 @@ public class WebController {
         return webDriver.findElements(By.className(className));
     }
 
+    public List<WebElement> findElementsByXpath(String text) {
+        return webDriver.findElements(By.xpath(text));
+    }
+
+    public boolean IsElementDisplayedByPartilLinkText(String partialLinkText) {
+        return webDriver.findElement(By.partialLinkText(partialLinkText)).isDisplayed();
+    }
+
+    public boolean isElementDisplayedByClassName(String className) {
+        return webDriver.findElement(By.className(className)).isDisplayed();
+    }
 }
