@@ -55,7 +55,7 @@ public class NinjaSiteHomaPageTest {
 //        Assert.assertTrue(webController.findElementByClassName("dropdown-menu").getText().equals("Your shopping cart is empty!"));
         List<WebElement> lista1 = webController.findElementsByClassName("product-layout");
         for (int d = 0; d < lista1.size(); d++) {
-            System.out.println(lista1.get(d).get("title"));
+            System.out.println(lista1.get(d).getAttribute("title"));
             if (lista1.get(d).getAttribute("title").equals("MacBook")) {
                 lista1.get(d).findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
                 String txt2 = webController.findElementById("cart-total").getText();

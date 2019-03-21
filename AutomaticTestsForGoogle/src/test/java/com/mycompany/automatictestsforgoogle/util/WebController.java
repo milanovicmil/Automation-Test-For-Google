@@ -105,4 +105,7 @@ public class WebController {
     public boolean isElementDisplayedByClassName(String className) {
         return webDriver.findElement(By.className(className)).isDisplayed();
     }
+        public boolean isElementDisplayedByCssSelector(String text) {
+        return webDriver.findElement(By.cssSelector(text)).isDisplayed();
+    }
 }
